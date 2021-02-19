@@ -32,6 +32,7 @@ public class Worker : MonoBehaviour
 
     void Update()
     {
+        
         if(resourceTarget == null)
         {
             Collider2D[] potentialTargets;
@@ -85,6 +86,7 @@ public class Worker : MonoBehaviour
         {
            float step = speed * Time.deltaTime;
            transform.position = Vector3.MoveTowards(transform.position, currTarget.transform.position, step);
+
         }
     }
 
