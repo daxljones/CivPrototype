@@ -28,7 +28,6 @@ public class TownHallResourceController : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Working");
         Component[] allChildren = GetComponentsInChildren(typeof(Transform), true);
         allChildren[0] = allChildren[1]; // remove parent
         
