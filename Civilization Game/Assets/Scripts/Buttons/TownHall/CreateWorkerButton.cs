@@ -10,7 +10,7 @@ public class CreateWorkerButton : MonoBehaviour
     void OnMouseDown()
     {
         GameObject worker = Instantiate(workerPrefab);
-        worker.transform.position = townHall.transform.position;
+        worker.transform.position = new Vector3(townHall.transform.position.x, townHall.transform.position.y - 1, townHall.transform.position.y);
         worker.GetComponent<Worker>().setHome(townHall);
     }
 }

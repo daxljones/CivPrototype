@@ -23,8 +23,14 @@ public class Tile : MonoBehaviour
     public void setOccupied(GameObject o)
     {
         occupiedBy = o;
+        o.GetComponent<TileInformation>().setTile(this.gameObject);
     }
 
     public bool getOccupiedBy(){return occupiedBy;}
+    
+    public void removeOccupation()
+    {
+        occupiedBy = null;
+    }
 
 }

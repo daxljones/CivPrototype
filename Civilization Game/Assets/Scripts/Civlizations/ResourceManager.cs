@@ -25,10 +25,10 @@ public class ResourceManager : MonoBehaviour
         int temp = resources[resource];
         resources[resource] += amount;
 
-        Debug.Log("Resources added: ");
-        Debug.Log("Wood: " + resources["Wood"]);
-        Debug.Log("Stone: " + resources["Stone"]);
-        Debug.Log("Food: " + resources["Food"]);
-        Debug.Log("Stone: " + resources["Gold"]);
+        // Debug.Log("Resources added: ");
+        // Debug.Log("Wood: " + resources["Wood"]);
+        // Debug.Log("Stone: " + resources["Stone"]);
+        // Debug.Log("Food: " + resources["Food"]);
+        // Debug.Log("Stone: " + resources["Gold"]);
     }
 }

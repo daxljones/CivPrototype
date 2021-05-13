@@ -6,17 +6,7 @@ public class Resource : MonoBehaviour
 {
     public int quantityLeft = 1000;
     public string type = "Tree";
-
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public string mine()
     {
@@ -24,9 +14,12 @@ public class Resource : MonoBehaviour
 
         if(quantityLeft <= 0)
         {
+            this.gameObject.GetComponent<TileInformation>().clearTiles();
             Destroy(this.gameObject);
         }
 
         return type;
     }
+
+    
 }

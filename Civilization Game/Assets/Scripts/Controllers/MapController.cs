@@ -19,14 +19,14 @@ public class MapController : MonoBehaviour
             for(int j = 0; j < sizeY; j++)
             {
                 mapGrid[i, j] = Instantiate(grasseTilePrefab);
-                mapGrid[i, j].transform.position = new Vector3(i, j, j - 0.1f);
+                mapGrid[i, j].transform.position = new Vector3(i, j, j + 5);
                 Tile tile = mapGrid[i, j].GetComponent<Tile>();
                 tile.setPos(i, j);
 
                 if(Random.Range(0, 8) == 0)
                 {
                     GameObject resource = Instantiate(resources[Random.Range(0, resources.Length)]);
-                    resource.transform.position = new Vector3(i, j, j - 0.5f);
+                    resource.transform.position = new Vector3(i, j + 0.5f, j + 0.5f);
                     tile.setOccupied(resource);
                 }
             }
