@@ -14,7 +14,7 @@ public class Worker : MonoBehaviour
 
     Rigidbody2D rb;
 
-    GameObject.
+    
 
     
     Status doing;
