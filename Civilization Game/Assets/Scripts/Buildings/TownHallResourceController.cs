@@ -11,6 +11,8 @@ public class TownHallResourceController : MonoBehaviour
         hideChildren();
     }
 
+   
+    
     public void dumpResources(string type, int amount)
     {
         //Debug.Log("Dumped" + type);
@@ -25,7 +27,7 @@ public class TownHallResourceController : MonoBehaviour
         foreach (Transform child in allChildren)
             child.gameObject.SetActive(false);
     }
-
+    
     void OnMouseDown()
     {
         Component[] allChildren = GetComponentsInChildren(typeof(Transform), true);
@@ -39,6 +41,7 @@ public class TownHallResourceController : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().color = Color.gray;
     }
+    
 
     void OnMouseExit()
     {
