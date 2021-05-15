@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Settler : MonoBehaviour
+public class Settler : CivilizationEntity
 {
 
     public GameObject townHallPrefab;
@@ -34,7 +34,7 @@ public class Settler : MonoBehaviour
         }
     }
     
-    private void OnMouseOver() 
+    void OnMouseOver() 
     {
         if (Input.GetMouseButtonDown(0) && !waitingForInput)
         {
@@ -44,7 +44,10 @@ public class Settler : MonoBehaviour
         }
         else if(Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Right CLicked");
+            GameObject townHall = Instantiate(townHallPrefab);
+            townHall.transform.position = this.transform.position;
+            townHall.GetComponent<PlacingScript>().setCiv(civilization);
+            Destroy(this.gameObject);
         }
 
     
@@ -73,4 +76,5 @@ public class Settler : MonoBehaviour
 
         waitingForInput = false;
     }
+
 }

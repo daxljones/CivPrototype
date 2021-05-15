@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TownHallResourceController : MonoBehaviour
+public class TownHallResourceController : CivilizationEntity
 {
-    public GameObject civController;
 
     void Start()
     {
         hideChildren();
     }
-
-   
     
     public void dumpResources(string type, int amount)
     {
         //Debug.Log("Dumped" + type);
-        civController.GetComponent<ResourceManager>().addResource(type, amount);
+        civilization.GetComponent<ResourceManager>().addResource(type, amount);
     }
 
     public void hideChildren()
