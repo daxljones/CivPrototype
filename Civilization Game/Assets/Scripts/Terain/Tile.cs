@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
 {
     int x, y;
     
-    GameObject occupiedBy;
+    public GameObject occupiedBy;
 
 
     public Vector2 getPos()
@@ -26,7 +26,13 @@ public class Tile : MonoBehaviour
         o.GetComponent<TileInformation>().setTile(this.gameObject);
     }
 
-    public bool getOccupiedBy(){return occupiedBy;}
+    public bool isOccupied()
+    {
+        if(occupiedBy != null)
+            return false;
+
+        return true;
+    }
     
     public void removeOccupation()
     {

@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class PlacingTH : PlacingScript
 {
-    public override void OnMouseDown()
+    public override void addNewComponent()
     {
         TownHallResourceController th = gameObject.AddComponent<TownHallResourceController>() as TownHallResourceController;
         th.setCiv(civilization);
-        this.onPlacement();
-        Destroy(this);
     }
 }

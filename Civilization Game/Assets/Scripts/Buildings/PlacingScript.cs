@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class PlacingScript : CivilizationEntity
 {
-    public
+    public bool evenHorizontal = false;
+    public bool evenVertical = false;
 
     LinkedList<GameObject> tiles;
 
@@ -19,12 +20,27 @@ public abstract class PlacingScript : CivilizationEntity
     void Update()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        pos = new Vector3(pos.x, pos.y, pos.y);
+        int x = (int)pos.x;
+        int y = (int)pos.y;
+        float xAddition = !evenHorizontal ? 0f : 0.5f;
+        float yAddition = !evenVertical ? 0f : 0.5f;
+        pos = new Vector3(x + xAddition, y + yAddition, y + yAddition);
         this.transform.position = pos;
+    }
+
+    void OnMouseDown()
+    {
+        if(canPlace())
+        {
+            onPlacement();
+            addNewComponent();
+            Destroy(this);
+        }
     }
 
     void OnTriggerEnter(Collider tile) 
     {
+        Debug.Log("Works");
         tiles.AddLast(tile.gameObject);
     }
 
@@ -39,5 +55,18 @@ public abstract class PlacingScript : CivilizationEntity
             tile.GetComponent<Tile>().setOccupation(this.gameObject);
     }
 
-    public abstract void OnMouseDown();
+    bool canPlace()
+    {
+        foreach(GameObject tile in tiles)
+        {
+            if(tile.GetComponent<Tile>().isOccupied())
+                return false;
+        }
+
+        return true;
+    }
+
+
+
+    public abstract void addNewComponent();
 }
