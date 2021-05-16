@@ -20,7 +20,7 @@ public class Tile : MonoBehaviour
         y = j;
     }
 
-    public void setOccupied(GameObject o)
+    public void setOccupation(GameObject o)
     {
         occupiedBy = o;
         o.GetComponent<TileInformation>().setTile(this.gameObject);

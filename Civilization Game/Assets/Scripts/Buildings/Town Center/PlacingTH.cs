@@ -8,6 +8,7 @@ public class PlacingTH : PlacingScript
     {
         TownHallResourceController th = gameObject.AddComponent<TownHallResourceController>() as TownHallResourceController;
         th.setCiv(civilization);
+        this.onPlacement();
         Destroy(this);
     }
 }

@@ -27,7 +27,7 @@ public class MapController : MonoBehaviour
                 {
                     GameObject resource = Instantiate(resources[Random.Range(0, resources.Length)]);
                     resource.transform.position = new Vector3(i, j + 0.5f, j + 0.5f);
-                    tile.setOccupied(resource);
+                    tile.setOccupation(resource);
                 }
             }
         }
