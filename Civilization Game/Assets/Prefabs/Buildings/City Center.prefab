@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3878391523829785730}
   - component: {fileID: 3878391523829785728}
   - component: {fileID: 3878391523829785735}
-  - component: {fileID: 6999130522130887888}
+  - component: {fileID: 1531782175970928581}
   m_Layer: 0
   m_Name: City Center
   m_TagString: Untagged
@@ -235,7 +235,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.38}
   m_EdgeRadius: 0
---- !u!114 &6999130522130887888
+--- !u!114 &1531782175970928581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,9 +244,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3878391523829785788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1640db0db97ea4ca3abf5adb28c2c028, type: 3}
+  m_Script: {fileID: 11500000, guid: 132fd12200dbf4973968d44062a8307c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  civilization: {fileID: 0}
 --- !u!1 &3878391524363912710
 GameObject:
   m_ObjectHideFlags: 0

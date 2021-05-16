@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlacingScript : CivilizationEntity
+public abstract class PlacingScript : CivilizationEntity
 {
 
     void Start()
@@ -19,10 +19,5 @@ public class PlacingScript : CivilizationEntity
         this.transform.position = pos;
     }
 
-    void OnMouseDown()
-    {
-        TownHallResourceController th = gameObject.AddComponent<TownHallResourceController>() as TownHallResourceController;
-        th.setCiv(civilization);
-        Destroy(this);
-    }
+    public abstract void OnMouseDown();
 }
