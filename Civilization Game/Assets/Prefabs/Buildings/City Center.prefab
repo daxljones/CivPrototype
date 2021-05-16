@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   civilization: {fileID: 0}
-  evenHorizontal: 1
-  evenVertical: 1
+  horSize: 2
+  vertSize: 2
 --- !u!1 &3878391524363912710
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class PlacingScript : CivilizationEntity
 {
-    public bool evenHorizontal = false;
-    public bool evenVertical = false;
+    public int horSize = 0;
+    public int vertSize = 0;
 
     LinkedList<GameObject> tiles;
 
@@ -22,8 +22,8 @@ public abstract class PlacingScript : CivilizationEntity
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         int x = (int)pos.x;
         int y = (int)pos.y;
-        float xAddition = !evenHorizontal ? 0f : 0.5f;
-        float yAddition = !evenVertical ? 0f : 0.5f;
+        float xAddition = horSize % 2 == 0 ? 0.5f : 0f;
+        float yAddition = vertSize % 2 == 0 ? 0.5f : 0f;
         pos = new Vector3(x + xAddition, y + yAddition, y + yAddition);
         this.transform.position = pos;
     }
@@ -38,17 +38,6 @@ public abstract class PlacingScript : CivilizationEntity
         }
     }
 
-    void OnTriggerEnter(Collider tile) 
-    {
-        Debug.Log("Works");
-        tiles.AddLast(tile.gameObject);
-    }
-
-    void OnTriggerExit(Collider tile) 
-    {
-        tiles.Remove(tile.gameObject);
-    }
-
     public void onPlacement()
     {
         foreach(GameObject tile in tiles)
@@ -57,10 +46,23 @@ public abstract class PlacingScript : CivilizationEntity
 
     bool canPlace()
     {
-        foreach(GameObject tile in tiles)
+        MapController mc = GameObject.Find("MapController").GetComponent<MapController>();
+        Debug.Log("Called");
+        int xStartPos = (int)this.transform.position.x;
+        int yStartPos = (int)this.transform.position.y;
+        xStartPos = horSize % 2 == 0 ? xStartPos - (horSize / 2 - 1) : xStartPos - (horSize / 2);
+        yStartPos = vertSize % 2 == 0 ? yStartPos - (vertSize / 2 - 1) : yStartPos - (vertSize / 2);
+
+        for(int i = yStartPos; i < yStartPos + vertSize; i++)
         {
-            if(tile.GetComponent<Tile>().isOccupied())
-                return false;
+            for(int j = xStartPos; j < xStartPos + horSize; j++)
+            {
+                if(mc.getTile(j, i).GetComponent<Tile>().isOccupied())
+                {
+                    Debug.Log("Huh");
+                    return false;
+                }
+            }
         }
 
         return true;

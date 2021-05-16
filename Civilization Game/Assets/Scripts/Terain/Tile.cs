@@ -29,9 +29,9 @@ public class Tile : MonoBehaviour
     public bool isOccupied()
     {
         if(occupiedBy != null)
-            return false;
+            return true;
 
-        return true;
+        return false;
     }
     
     public void removeOccupation()

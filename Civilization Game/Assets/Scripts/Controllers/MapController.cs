@@ -34,8 +34,9 @@ public class MapController : MonoBehaviour
     }
 
 
-    void Update()
+    public GameObject getTile(int x, int y)
     {
-        
+        return mapGrid[x, y];
     }
+    
 }
