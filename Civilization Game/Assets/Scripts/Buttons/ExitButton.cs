@@ -6,6 +6,6 @@ public class ExitButton : MonoBehaviour
 {
     void OnMouseDown()
     {
-        transform.parent.GetComponent<TownHallResourceController>().hideChildren();
+        transform.parent.GetComponent<MenuDisplay>().hideChildren();
     }
 }

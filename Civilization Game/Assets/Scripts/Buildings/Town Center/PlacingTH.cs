@@ -6,7 +6,7 @@ public class PlacingTH : PlacingScript
 {
     public override void addNewComponent()
     {
-        TownHallResourceController th = gameObject.AddComponent<TownHallResourceController>() as TownHallResourceController;
-        th.setCiv(civilization);
+        MenuDisplay th = gameObject.AddComponent<MenuDisplay>() as MenuDisplay;
+        this.gameObject.GetComponent<TownHallResourceController>().setCiv(civilization);
     }
 }

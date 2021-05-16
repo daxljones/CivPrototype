@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3878391523310720381}
   - component: {fileID: 3878391523310720322}
   - component: {fileID: 3878391523310720323}
-  - component: {fileID: 3878391523310720380}
+  - component: {fileID: 6509044853277899052}
   m_Layer: 0
   m_Name: Exit Button
   m_TagString: Untagged
@@ -99,7 +99,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3878391523310720380
+--- !u!114 &6509044853277899052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 3878391523829785728}
   - component: {fileID: 3878391523829785735}
   - component: {fileID: 1531782175970928581}
+  - component: {fileID: -5653061390013320572}
   m_Layer: 0
   m_Name: City Center
   m_TagString: Untagged
@@ -250,6 +251,19 @@ MonoBehaviour:
   civilization: {fileID: 0}
   horSize: 2
   vertSize: 2
+--- !u!114 &-5653061390013320572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3878391523829785788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99759ca2532504491b136c23d7df3466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  civilization: {fileID: 0}
 --- !u!1 &3878391524363912710
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,7 +47,6 @@ public abstract class PlacingScript : CivilizationEntity
     bool canPlace()
     {
         MapController mc = GameObject.Find("MapController").GetComponent<MapController>();
-        Debug.Log("Called");
         int xStartPos = (int)this.transform.position.x;
         int yStartPos = (int)this.transform.position.y;
         xStartPos = horSize % 2 == 0 ? xStartPos - (horSize / 2 - 1) : xStartPos - (horSize / 2);
@@ -59,7 +58,6 @@ public abstract class PlacingScript : CivilizationEntity
             {
                 if(mc.getTile(j, i).GetComponent<Tile>().isOccupied())
                 {
-                    Debug.Log("Huh");
                     return false;
                 }
             }
