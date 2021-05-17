@@ -5,12 +5,10 @@ using UnityEngine;
 public class CreateWorkerButton : MonoBehaviour
 {
     public GameObject workerPrefab;
-    public GameObject townHall;
+    public TownHallResourceController townHall;
 
     void OnMouseDown()
     {
-        GameObject worker = Instantiate(workerPrefab);
-        worker.transform.position = new Vector3(townHall.transform.position.x, townHall.transform.position.y - 1, townHall.transform.position.y);
-        worker.GetComponent<Worker>().setHome(townHall);
+        townHall.createAUnit("Worker");
     }
 }

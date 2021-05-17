@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlacingTH : PlacingScript
 {
-    public override void addNewComponent()
+    public override void onPlacement()
     {
         MenuDisplay th = gameObject.AddComponent<MenuDisplay>() as MenuDisplay;
         this.gameObject.GetComponent<TownHallResourceController>().setCiv(civilization);
+        this.gameObject.GetComponent<TownHallResourceController>().spawnUnit("Citizen");
+        this.gameObject.GetComponent<TownHallResourceController>().spawnUnit("Citizen");
     }
 }

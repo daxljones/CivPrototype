@@ -33,15 +33,8 @@ public abstract class PlacingScript : CivilizationEntity
         if(canPlace())
         {
             onPlacement();
-            addNewComponent();
             Destroy(this);
         }
-    }
-
-    public void onPlacement()
-    {
-        foreach(GameObject tile in tiles)
-            tile.GetComponent<Tile>().setOccupation(this.gameObject);
     }
 
     bool canPlace()
@@ -68,5 +61,5 @@ public abstract class PlacingScript : CivilizationEntity
 
 
 
-    public abstract void addNewComponent();
+    public abstract void onPlacement();
 }

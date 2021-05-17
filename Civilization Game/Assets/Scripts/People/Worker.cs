@@ -8,7 +8,6 @@ public class Worker : MonoBehaviour
 {
     enum Status {Working, Returning, Sitting}
 
-    GameObject homeTownHall;
     GameObject resourceTarget;
     GameObject currTarget;
 
@@ -63,7 +62,7 @@ public class Worker : MonoBehaviour
 
         if(bag >= MAX_CAPACITY)
         {
-            currTarget = homeTownHall;
+            currTarget = GetComponent<UnitWithHome>().homeTownHall;
             doing = Status.Returning;
         }
 
@@ -75,7 +74,7 @@ public class Worker : MonoBehaviour
             }
             else
             {
-                homeTownHall.GetComponent<TownHallResourceController>().dumpResources(inBag, bag);
+                GetComponent<UnitWithHome>().homeTownHall.GetComponent<TownHallResourceController>().dumpResources(inBag, bag);
                 bag = 0;
                 doing = Status.Working;
             }
@@ -103,11 +102,6 @@ public class Worker : MonoBehaviour
         {
             doing = Status.Returning;
         }
-    }
-
-    public void setHome(GameObject home)
-    {
-        homeTownHall = home;
     }
 
     GameObject getClosestResources(Collider2D[] resources)
