@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Resource
+  - Settler
+  - Worker
+  - Citizen
   layers:
   - Default
   - TransparentFX
