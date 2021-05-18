@@ -28,7 +28,7 @@ public class TownHallResourceController : CivilizationEntity
 
     public void dumpResources(string type, int amount)
     {
-        civilization.GetComponent<ResourceManager>().addResource(type, amount);
+        civilization.GetComponent<PlayerResourceManager>().addResource(type, amount);
     }
 
     public void spawnUnit(String u)

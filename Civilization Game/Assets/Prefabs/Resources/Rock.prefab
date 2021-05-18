@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantityLeft: 1000
-  type: Stone
+  type: stone
 --- !u!114 &-84122287343450957
 MonoBehaviour:
   m_ObjectHideFlags: 0

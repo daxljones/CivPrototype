@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantityLeft: 1000
-  type: Wood
+  type: wood
 --- !u!61 &-8907745332976305324
 BoxCollider2D:
   m_ObjectHideFlags: 0
