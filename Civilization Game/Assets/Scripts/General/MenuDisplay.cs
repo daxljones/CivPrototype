@@ -5,26 +5,24 @@ using UnityEngine;
 public class MenuDisplay : MonoBehaviour
 {
     // Start is called before the first frame update
+    Color originalColor;
+
     void Start()
     {
+        originalColor = GetComponent<SpriteRenderer>().color;
         hideChildren();
     }
 
     public void hideChildren()
     {
-        Transform[] allChildren = GetComponentsInChildren<Transform>();
-        allChildren[0] = allChildren[1]; // remove parent
         
-        foreach (Transform child in allChildren)
+        foreach (Transform child in transform)
             child.gameObject.SetActive(false);
     }
     
-    void OnMouseDown()
+    public void showChildren()
     {
-        Component[] allChildren = GetComponentsInChildren(typeof(Transform), true);
-        allChildren[0] = allChildren[1]; // remove parent
-        
-        foreach (Transform child in allChildren)
+        foreach (Transform child in transform)
             child.gameObject.SetActive(true);
     }
 
@@ -36,6 +34,6 @@ public class MenuDisplay : MonoBehaviour
 
     void OnMouseExit()
     {
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        this.GetComponent<SpriteRenderer>().color = originalColor;
     }
 }

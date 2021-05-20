@@ -6,7 +6,7 @@ public class BuildingButton : MonoBehaviour
 {
     void OnMouseDown()
     {
+        GetComponent<MenuDisplay>().showChildren();
         transform.parent.GetComponent<MenuDisplay>().hideChildren();
-
     }
 }
