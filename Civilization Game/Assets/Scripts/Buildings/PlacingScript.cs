@@ -7,6 +7,9 @@ public abstract class PlacingScript : CivilizationEntity
     public int horSize = 0;
     public int vertSize = 0;
 
+    float xAddition;
+    float yAddition;
+
     LinkedList<GameObject> tiles;
 
     void Start()
@@ -14,6 +17,8 @@ public abstract class PlacingScript : CivilizationEntity
         SpriteRenderer sprite = sprite = GetComponent<SpriteRenderer>();
         sprite.color = new Color(1f, 1f, 1f, 0.25f);
         tiles = new LinkedList<GameObject>();
+        xAddition = horSize % 2 == 0 ? 0.5f : 0f;
+        yAddition = vertSize % 2 == 0 ? 0.5f : 0f;
     }
 
     // Update is called once per frame
@@ -22,8 +27,6 @@ public abstract class PlacingScript : CivilizationEntity
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         int x = (int)pos.x;
         int y = (int)pos.y;
-        float xAddition = horSize % 2 == 0 ? 0.5f : 0f;
-        float yAddition = vertSize % 2 == 0 ? 0.5f : 0f;
         pos = new Vector3(x + xAddition, y + yAddition, y + yAddition);
         this.transform.position = pos;
     }

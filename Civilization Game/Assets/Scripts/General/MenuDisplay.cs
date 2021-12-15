@@ -7,9 +7,8 @@ public class MenuDisplay : MonoBehaviour
     // Start is called before the first frame update
     Color originalColor;
 
-    void Start()
+    void Awake()
     {
-        originalColor = GetComponent<SpriteRenderer>().color;
         hideChildren();
     }
 
@@ -34,6 +33,6 @@ public class MenuDisplay : MonoBehaviour
 
     void OnMouseExit()
     {
-        this.GetComponent<SpriteRenderer>().color = originalColor;
+        this.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
